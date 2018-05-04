@@ -1,0 +1,39 @@
+module.exports = {
+
+    debug: true,
+
+    url: "",
+
+    login: "",
+    password: "",
+    username: "",
+
+    // botMode: "reviveMode",
+    botMode: "buyMode",
+    // botMode: "crimeMode",
+    // botMode: "forumMode",
+
+    buyItem: "BOX_OF_TISSUES",
+    // buyItem: "XANAX",
+
+    forumReadingTime: 1, // minutes
+
+    // Telegram API
+    telegramUsername: "", // from @botfather wthout @
+    telegramToken: "",  // from @botfather
+
+    chromeHeadless: false,
+    chromeSloMo: 250,
+    chromeOptions: ['--disable-gpu', '--deterministic-fetch', `–-process-per-site` ,'--no-sandbox', '--disable-setuid-sandbox' ],
+    executablePath: "",
+
+    log: {
+        drivers: ["console"], // slack or console
+        channels: {
+            console: '',
+            slack: {
+                webhook: ''
+            }
+        }
+    }
+};

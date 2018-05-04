@@ -1,0 +1,24 @@
+{
+  "name": "torn-bot",
+  "version": "1.0.0",
+  "description": "Script to automate torn stuff.",
+  "main": "bot.js",
+  "dependencies": {
+    "colors": "^1.2.1",
+    "path": "^0.12.7",
+    "puppeteer": "^1.1.1",
+    "system-sleep": "^1.3.6",
+    "request": "^2.85.0",
+    "telegraf": "^3.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node bot.js",
+    "start-forever": "forever -o ./logs/debug.log -e ./logs/errors.log start bot.js",
+    "stop": "killall node",
+    "stop-forever": "forever stop bot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
