@@ -63,6 +63,7 @@ class BuyMode extends Manager_state {
 
         this.utils.sleep(this.utils.randomInterval(5, 10));
 
+        // TODO
         let resultElement = await this.bot.evaluate(() => {
             let element = Array.from(document.querySelectorAll('.success')).filter(e => e.innerText.trim().length > 0);
             if (element.length === 0) {
@@ -90,6 +91,11 @@ class BuyMode extends Manager_state {
         this.log.info('Money: ' + money);
 
         const item = items[this.config.buyItem];
+        if (item === null) {
+            this.log.error('Can not find item: ' + this.config.buyItem);
+            this.log.info('buying failed');
+            return;
+        }
         this.log.info('Buying item: ' + item.name);
 
         if (item.price > money) {

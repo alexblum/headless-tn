@@ -27,8 +27,10 @@ class PlayerInfo extends Manager_state {
     async start() {
         const energy = await this.readEnergy();
         const money = await this.readMoney();
+        const nerve = await this.readNerve();
 
         this.log.info('Energy: ' + energy);
+        this.log.info('Nerve: ' + nerve);
         this.log.info('Money: ' + money);
     }
 
@@ -38,6 +40,11 @@ class PlayerInfo extends Manager_state {
         }, 'barEnergy');
     }
 
+    async readNerve() {
+        return await this.bot.evaluate((sel) => {
+            return parseInt(document.getElementById(sel).innerText.match(/\d+/)[0]);
+        }, 'barNerve');
+    }
 
     async readMoney() {
         return await this.bot.evaluate((sel) => {
