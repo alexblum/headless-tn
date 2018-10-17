@@ -70,6 +70,7 @@ class Utils {
      * Sleep
      * =====================
      * Zzz
+     * Sleeps for n milliseconds
      *
      */
     sleep(sec) {
